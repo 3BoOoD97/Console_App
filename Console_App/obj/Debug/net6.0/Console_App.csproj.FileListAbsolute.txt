@@ -1,0 +1,15 @@
+C:\Users\abodn\Desktop\GitHub\Console_App\Console_App\bin\Debug\net6.0\Console_App.exe
+C:\Users\abodn\Desktop\GitHub\Console_App\Console_App\bin\Debug\net6.0\Console_App.deps.json
+C:\Users\abodn\Desktop\GitHub\Console_App\Console_App\bin\Debug\net6.0\Console_App.runtimeconfig.json
+C:\Users\abodn\Desktop\GitHub\Console_App\Console_App\bin\Debug\net6.0\Console_App.dll
+C:\Users\abodn\Desktop\GitHub\Console_App\Console_App\bin\Debug\net6.0\Console_App.pdb
+C:\Users\abodn\Desktop\GitHub\Console_App\Console_App\obj\Debug\net6.0\Console_App.csproj.AssemblyReference.cache
+C:\Users\abodn\Desktop\GitHub\Console_App\Console_App\obj\Debug\net6.0\Console_App.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\abodn\Desktop\GitHub\Console_App\Console_App\obj\Debug\net6.0\Console_App.AssemblyInfoInputs.cache
+C:\Users\abodn\Desktop\GitHub\Console_App\Console_App\obj\Debug\net6.0\Console_App.AssemblyInfo.cs
+C:\Users\abodn\Desktop\GitHub\Console_App\Console_App\obj\Debug\net6.0\Console_App.csproj.CoreCompileInputs.cache
+C:\Users\abodn\Desktop\GitHub\Console_App\Console_App\obj\Debug\net6.0\Console_App.dll
+C:\Users\abodn\Desktop\GitHub\Console_App\Console_App\obj\Debug\net6.0\refint\Console_App.dll
+C:\Users\abodn\Desktop\GitHub\Console_App\Console_App\obj\Debug\net6.0\Console_App.pdb
+C:\Users\abodn\Desktop\GitHub\Console_App\Console_App\obj\Debug\net6.0\Console_App.genruntimeconfig.cache
+C:\Users\abodn\Desktop\GitHub\Console_App\Console_App\obj\Debug\net6.0\ref\Console_App.dll
