@@ -1,4 +1,7 @@
 ﻿using System;
+using Console_App.Model;
+using Console_App.DataContext;
+using System.Text;
 
 namespace Console_App
 {
@@ -19,7 +22,6 @@ namespace Console_App
                  ----------------
               */
 
-    
 
 
             // check if the number of arguments, if it is not equal to 2 then print an error message and exit the program.
@@ -29,6 +31,7 @@ namespace Console_App
                 return;
             }
 
+            // check if there is an arguments equals to null, if so then print an error message and exit the program.
             if (args[0] == null || args[1] == null)
             {
                 Console.WriteLine("Error! Please enter 2 arguments");
@@ -42,6 +45,63 @@ namespace Console_App
             // display the result
             var result = extensionMethods.addArgs(argument1, argument2);
             Console.WriteLine(result);
+
+
+            Console.WriteLine("---------");
+
+            insertArg(result.ToString());
+            argsTable();
+
         }
+
+
+
+        /* Pseudocode
+                ** PART 2 **
+                * Create a new instance from DBContext class.
+                * Create a new instance from argClass class.
+                * Assign the values to the properties of argClass.
+                * Add the instance of argClass to the DBContext.
+                * Save the changes.
+                * Display the result.
+                * End of PART 2
+                 ----------------
+              */
+        static void argsTable()
+        {
+            Console.WriteLine(
+                "This is the second part of the program, it will add the arguments to the database and display the result");
+            // create a new instance from DBContext class
+
+            using (var result = new DBContext())
+            {
+                List<argClass> args = result.argTable.ToList();
+
+                StringBuilder sb = new StringBuilder();
+
+                foreach (var arg in args)
+                {
+                  //  Console.WriteLine(arg.argValue);
+                    sb.AppendLine(arg.argValue);
+                }
+
+                Console.WriteLine(sb.ToString());
+
+            }
+            return;
         }
+
+        static void insertArg(string arg)
+        {
+            using (var result = new DBContext())
+            {
+                var argClass = new argClass();
+                argClass.argValue = arg;
+                result.argTable.Add(argClass);
+                result.SaveChanges();
+            }
+            return;
+
+        }
+    }
     }
