@@ -17,14 +17,14 @@ namespace Console_App.Model
 {
     class SQLRepository : IArgRepository
     {
-        public void AdArg(argClass arg)
+        public void AdArg(Arg arg)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<argClass> gerArgs()
+        public IEnumerable<Arg> gerArgs()
         {
-            List<argClass> args = new List<argClass>();
+            List<Arg> args = new List<Arg>();
             using (SqlConnection connection =
             new SqlConnection(ConfigurationManager.ConnectionStrings["ArgsDB"].ToString()))
             {
@@ -37,9 +37,9 @@ namespace Console_App.Model
                         {
                             while (reader.Read())
                             {
-                                argClass arg = new argClass()
+                                Arg arg = new Arg()
                                 {
-                                    argValue = reader["argValue"].ToString()),
+                                    argValue = reader["argValue"].ToString(),
 
                                 };
                                 args.Add(arg);

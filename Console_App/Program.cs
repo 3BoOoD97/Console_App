@@ -1,11 +1,12 @@
 ﻿using System;
 using Console_App.Model;
-using Console_App.DataContext;
 using System.Text;
 using System.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Protocols;
 using System.Configuration;
+using Console_App.IRepository;
+
 namespace Console_App
 {
     internal class Program
@@ -25,13 +26,24 @@ namespace Console_App
                  ----------------
               */
 
-            Console.WriteLine("Connection Open1 ");
 
+
+            /* Just to make sure that the connection is working
             using (SqlConnection sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["ArgsDB"].ConnectionString))
             {
                 sqlConnection.Open();
                 Console.WriteLine("Connection Open ");
             }
+            */
+
+            IArgRepository repo = new SQLRepository();
+            var argsList = repo.gerArgs();
+            displayArgs(argsList);
+
+
+
+
+
             // check if the number of arguments, if it is not equal to 2 then print an error message and exit the program.
             if (args.Length != 2)
             {
@@ -51,14 +63,14 @@ namespace Console_App
             var argument2 = extensionMethods.stringConverter(args[1]);
 
             // display the result
-            var result = extensionMethods.addArgs(argument1, argument2);
-            Console.WriteLine(result);
+          //  var result = extensionMethods.addArgs(argument1, argument2);
+           // Console.WriteLine(result);
 
 
             Console.WriteLine("---------");
 
-            insertArg(result.ToString());
-            argsTable();
+            //insertArg(result.ToString());
+            //argsTable();
 
         }
 
@@ -75,40 +87,18 @@ namespace Console_App
                 * End of PART 2
                  ----------------
               */
-        static void argsTable()
+       
+
+        private static void displayArgs(IEnumerable<Arg> args)
         {
-            Console.WriteLine(
-                "This is the second part of the program, it will add the arguments to the database and display the result");
-            // create a new instance from DBContext class
-
-            using (var result = new DBContext())
+            Console.WriteLine("This is the second part of the program, it will add the arguments to the database and display the result");
+            foreach (var arg in args)
             {
-                List<argClass> args = result.argTable.ToList();
-
-                StringBuilder sb = new StringBuilder();
-
-                foreach (var arg in args)
-                {
-                  //  Console.WriteLine(arg.argValue);
-                    sb.AppendLine(arg.argValue);
-                }
-
-                Console.WriteLine(sb.ToString());
+                Console.WriteLine(arg.argValue);
             }
-            return;
         }
 
-        static void insertArg(string arg)
-        {
-            using (var result = new DBContext())
-            {
-                var argClass = new argClass();
-                argClass.argValue = arg;
-                result.argTable.Add(argClass);
-                result.SaveChanges();
-            }
-            return;
 
-        }
     }
-    }
+
+}

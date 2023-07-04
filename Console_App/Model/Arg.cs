@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Console_App.Model
 {
-     class argClass
+     class Arg
     {
-        [Key]
+  
         public string argValue { get; set; }
 
     }
