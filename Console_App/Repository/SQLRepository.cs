@@ -12,17 +12,36 @@ using SqlCommand = Microsoft.Data.SqlClient.SqlCommand;
 using SqlDataReader = Microsoft.Data.SqlClient.SqlDataReader;
 using SqlConnection = Microsoft.Data.SqlClient.SqlConnection;
 using Console_App.IRepository;
+using Console_App.Model;
 
-namespace Console_App.Model
+namespace Console_App.Repository
 {
     class SQLRepository : IArgRepository
     {
         public void AdArg(Arg arg)
         {
-            throw new NotImplementedException();
+            if (arg == null)
+            {
+                throw new ArgumentNullException(nameof(arg));
+            }
+
+            using (SqlConnection connection =
+                new SqlConnection(ConfigurationManager.ConnectionStrings["ArgsDB"].ToString()))
+            {
+                connection.Open();
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO argTable (argValue) VALUES (@argValue)", connection))
+                {
+                    cmd.Parameters.AddWithValue("@argValue", arg.argValue);
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
+
+                }
+            }
+
         }
 
-        public IEnumerable<Arg> gerArgs()
+
+        public IEnumerable<Arg> getArgs()
         {
             List<Arg> args = new List<Arg>();
             using (SqlConnection connection =

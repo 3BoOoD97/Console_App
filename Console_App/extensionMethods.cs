@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Console_App.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,9 @@ namespace Console_App
             dynamic result = dynamicArg1 + dynamicArg2;
             return result;
         }
+
+    
+
 
         // stringConverter method to convert the arguments to the same type
         public static object stringConverter(string args)

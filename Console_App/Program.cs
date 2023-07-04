@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Protocols;
 using System.Configuration;
 using Console_App.IRepository;
+using Console_App.Repository;
 
 namespace Console_App
 {
@@ -36,10 +37,9 @@ namespace Console_App
             }
             */
 
-            IArgRepository repo = new SQLRepository();
-            var argsList = repo.gerArgs();
-            displayArgs(argsList);
 
+
+           
 
 
 
@@ -63,14 +63,19 @@ namespace Console_App
             var argument2 = extensionMethods.stringConverter(args[1]);
 
             // display the result
-          //  var result = extensionMethods.addArgs(argument1, argument2);
-           // Console.WriteLine(result);
+          var result = extensionMethods.addArgs(argument1, argument2);
+            Console.WriteLine(result);
 
-
+         Console.WriteLine(result+" Was added successfully to the database");
             Console.WriteLine("---------");
 
-            //insertArg(result.ToString());
-            //argsTable();
+
+            Console.WriteLine("This is the second part of the program, it will add the arguments to the database and display the result");
+            IArgRepository repo = new SQLRepository();
+          
+            repo.AdArg(new Arg() { argValue = (string)result });
+            var argsList = repo.getArgs();
+            displayArgs(argsList);
 
         }
 
@@ -87,16 +92,18 @@ namespace Console_App
                 * End of PART 2
                  ----------------
               */
-       
+
 
         private static void displayArgs(IEnumerable<Arg> args)
         {
-            Console.WriteLine("This is the second part of the program, it will add the arguments to the database and display the result");
             foreach (var arg in args)
             {
                 Console.WriteLine(arg.argValue);
             }
         }
+
+
+       
 
 
     }
