@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "uthUmB4Ixg7HltVn78jFyYgPM2lHKR75MhluwSYxpZ+mjsbmyhIcJwJkulWWzW4FdSwp8fvb3zi+/cP/hZsnqQ==",
+  "dgSpecHash": "y1/b9nJMBk2QIM/y0B0RZsyflg9mY1z68sTbA9QyrOSl8au5earytO9SlMd+Ht13l7GGW/L6lwn2t6eom3Lo2g==",
   "success": true,
   "projectFilePath": "C:\\Users\\abodn\\Desktop\\GitHub\\Console_App\\extensionMethodsTest\\extensionMethodsTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\abodn\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\abodn\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\abodn\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
+    "C:\\Users\\abodn\\.nuget\\packages\\dapper\\2.0.143\\dapper.2.0.143.nupkg.sha512",
     "C:\\Users\\abodn\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\abodn\\.nuget\\packages\\microsoft.codecoverage\\17.5.0\\microsoft.codecoverage.17.5.0.nupkg.sha512",
     "C:\\Users\\abodn\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

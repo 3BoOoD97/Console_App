@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "YowFZVci/02aunj4Cdynp4t8KOd+Mje0hoemRLB2ezmtWY3yof2KXpq9G+kzCPJGd4CO1c4c1sYp0N0ulIipNQ==",
+  "dgSpecHash": "iOS7pH4bdDGsxgTozy+/k/6eic3Q7gNxkN85oFXvHsE+C5t8rYP/AwMHx3b5uH0g1qffIPnF2ekUujMQZ8L+rg==",
   "success": true,
   "projectFilePath": "C:\\Users\\abodn\\Desktop\\GitHub\\Console_App\\Console_App\\Console_App.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\abodn\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\abodn\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\abodn\\.nuget\\packages\\dapper\\2.0.143\\dapper.2.0.143.nupkg.sha512",
     "C:\\Users\\abodn\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\abodn\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\abodn\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

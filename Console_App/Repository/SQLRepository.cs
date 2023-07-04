@@ -13,64 +13,49 @@ using SqlDataReader = Microsoft.Data.SqlClient.SqlDataReader;
 using SqlConnection = Microsoft.Data.SqlClient.SqlConnection;
 using Console_App.IRepository;
 using Console_App.Model;
+using Dapper;
+using System.Data;
 
 namespace Console_App.Repository
 {
     class SQLRepository : IArgRepository
     {
-        public void AdArg(Arg arg)
+
+/*
+ * Dapper library is used to access the database, since it is Light in size, easy to handle, 
+ and high in performance. 
+* Stored Procedure is used, so the code can be reused and it is a good defense against
+ SQL injection attacks because the incoming parameters are never parsed.
+        */
+        public void AdArg(string arg)
         {
             if (arg == null)
             {
                 throw new ArgumentNullException(nameof(arg));
             }
 
-            using (SqlConnection connection =
-                new SqlConnection(ConfigurationManager.ConnectionStrings["ArgsDB"].ToString()))
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.GetConnectionString("ArgsDB")))
             {
-                connection.Open();
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO argTable (argValue) VALUES (@argValue)", connection))
-                {
-                    cmd.Parameters.AddWithValue("@argValue", arg.argValue);
-                    cmd.ExecuteNonQuery();
-                    connection.Close();
+                var parameters = new { argValue = arg };
+                connection.Execute("InsertArg", parameters, commandType: CommandType.StoredProcedure);
 
-                }
             }
-
         }
 
-
+      
         public IEnumerable<Arg> getArgs()
         {
-            List<Arg> args = new List<Arg>();
-            using (SqlConnection connection =
-            new SqlConnection(ConfigurationManager.ConnectionStrings["ArgsDB"].ToString()))
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.GetConnectionString("ArgsDB")))
             {
-                connection.Open();
-                using (SqlCommand cmd = new SqlCommand("SELECT * FROM argTable", connection))
-                {
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        if (reader != null)
-                        {
-                            while (reader.Read())
-                            {
-                                Arg arg = new Arg()
-                                {
-                                    argValue = reader["argValue"].ToString(),
-
-                                };
-                                args.Add(arg);
-                            }
-                        }
-                    }
-                }
-
-                return args;
+                var output = connection.Query<Arg>("SELECT * FROM argTable").ToList();
+                return output;
             }
-
         }
+
     }
 }
+    
+
+
+
 

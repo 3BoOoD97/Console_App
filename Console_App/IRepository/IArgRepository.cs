@@ -9,9 +9,9 @@ namespace Console_App.IRepository
 {
     interface IArgRepository
     {
-        void AdArg(Arg arg);
-        IEnumerable<Arg> getArgs();
+        void AdArg(string result);
 
+        IEnumerable<Arg> getArgs();
 
     }
 }

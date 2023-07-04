@@ -84,10 +84,9 @@ to verify the functionality of the addArgs method with different argument types.
             // create a new instance from SQLRepository and call addArg method
             IArgRepository repo = new SQLRepository();
             // repo.AdArg(new Arg() { argValue = (string)result });
-            addArgToDB(IArg: repo, result: (string)result);
+            repo.AdArg((string)result);
             var argsList = repo.getArgs();
             displayArgs(argsList);
-
         }
 
 
@@ -116,11 +115,13 @@ to verify the functionality of the addArgs method with different argument types.
             }
         }
 
+
+        /*
         private static void addArgToDB(string result, IArgRepository IArg)
         {
             IArg.AdArg(new Arg() { argValue = (string)result });
         }
-
+        */
     }
 
 }
