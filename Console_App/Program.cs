@@ -2,7 +2,10 @@
 using Console_App.Model;
 using Console_App.DataContext;
 using System.Text;
-
+using System.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Protocols;
+using System.Configuration;
 namespace Console_App
 {
     internal class Program
@@ -22,8 +25,13 @@ namespace Console_App
                  ----------------
               */
 
+            Console.WriteLine("Connection Open1 ");
 
-
+            using (SqlConnection sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["ArgsDB"].ConnectionString))
+            {
+                sqlConnection.Open();
+                Console.WriteLine("Connection Open ");
+            }
             // check if the number of arguments, if it is not equal to 2 then print an error message and exit the program.
             if (args.Length != 2)
             {
@@ -86,7 +94,6 @@ namespace Console_App
                 }
 
                 Console.WriteLine(sb.ToString());
-
             }
             return;
         }
