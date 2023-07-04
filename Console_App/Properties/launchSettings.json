@@ -2,7 +2,7 @@
   "profiles": {
     "Console_App": {
       "commandName": "Project",
-      "commandLineArgs": "ab od"
+      "commandLineArgs": "11c w"
     }
   }
 }

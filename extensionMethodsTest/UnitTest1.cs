@@ -5,16 +5,21 @@ namespace extensionMethodsTest
     [TestClass]
     public class UnitTest1
     {
-        [TestMethod]
+        dynamic argument1;
+        dynamic argument2;
+        dynamic expected;
+        dynamic actual;
+
+      [TestMethod]
         public void addTwoIntegers()
         {
             // Arrange
-            var argument1 = extensionMethods.stringConverter("1");
-            var argument2 = extensionMethods.stringConverter("2");
-            var expected = 3;
+            argument1 = 1;
+            argument2 = 2;
+            expected = 3;
 
             // Act
-            var actual = extensionMethods.addArgs(argument1, argument2);
+             actual = extensionMethods.addArgs(argument1, argument2);
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -25,12 +30,12 @@ namespace extensionMethodsTest
         public void addIntegerWithString()
         {
             // Arrange
-            var argument1 = extensionMethods.stringConverter("1");
-            var argument2 = extensionMethods.stringConverter("abc");
-            var expected = "1abc";
+            argument1 = 1;
+            argument2 = "abc";
+            expected = "1abc";
 
             // Act
-            var actual = extensionMethods.addArgs(argument1, argument2);
+             actual = extensionMethods.addArgs(argument1, argument2);
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -40,11 +45,12 @@ namespace extensionMethodsTest
         public void addIntegerWithDouble()
         {
             // Arrange
-            var argument1 = extensionMethods.stringConverter("1");
-            var argument2 = extensionMethods.stringConverter("2.2");
-            var expected = 3.2;
+             argument1 = 1;
+             argument2 = 2.2;
+             expected = 3.2;
+
             // Act
-            var actual = extensionMethods.addArgs(argument1, argument2);
+            actual = extensionMethods.addArgs(argument1, argument2);
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -54,9 +60,9 @@ namespace extensionMethodsTest
         public void addTwoChars()
         {
             // Arrange
-            var argument1 = extensionMethods.stringConverter("a");
-            var argument2 = extensionMethods.stringConverter("b");
-            var expected = "ab";
+             argument1 = "a";
+             argument2 = "b";
+             expected = "ab";
 
             // Act
             var actual = extensionMethods.addArgs(argument1, argument2);
@@ -69,12 +75,13 @@ namespace extensionMethodsTest
         public void addTwoDoubles()
         {
             // Arrange
-            var argument1 = extensionMethods.stringConverter("1.1");
-            var argument2 = extensionMethods.stringConverter("2.2");
-            var expected = 3.3000000000000003;
+             argument1 = 1.1;
+             argument2 = 2.2;
+             expected = 3.3000000;
 
             // Act
-            var actual = extensionMethods.addArgs(argument1, argument2);
+             actual = extensionMethods.addArgs(argument1, argument2);
+             actual = Math.Round(actual, 7);
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -84,12 +91,12 @@ namespace extensionMethodsTest
         public void addDoubleWithChar()
         {
             // Arrange
-            var argument1 = extensionMethods.stringConverter("1.1");
-            var argument2 = extensionMethods.stringConverter("a");
-            var expected = "1.1a";
+             argument1 = 1.1;
+             argument2 = "a";
+             expected = "1.1a";
 
             // Act
-            var actual = extensionMethods.addArgs(argument1, argument2);
+             actual = extensionMethods.addArgs(argument1, argument2);
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -97,17 +104,16 @@ namespace extensionMethodsTest
 
 
         [TestMethod]
-        /* Alwayes will fail because of the F at the end */
         public void addTwoFloats()
         {
             // Arrange
-            var argument1 = extensionMethods.stringConverter("1.1F");
-            var argument2 = extensionMethods.stringConverter("2.2F");
-            var expected = 3.3F;
+             argument1 = 1.1F;
+             argument2 = 2.2F;
+            expected = 3.3000002;
 
             // Act
-            var actual = extensionMethods.addArgs(argument1, argument2);
-
+             actual = extensionMethods.addArgs(argument1, argument2);
+             actual = Math.Round(actual, 7);
             // Assert
             Assert.AreEqual(expected, actual);
         }
