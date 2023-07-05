@@ -9,8 +9,6 @@ namespace Console_App.Model
 {
      class Arg
     {
-  
         public string argValue { get; set; }
-
     }
 }

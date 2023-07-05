@@ -12,7 +12,7 @@ namespace Console_App
         // Get Connection String from App.Config
         public static string GetConnectionString(string name)
         {
-         return ConfigurationManager.ConnectionStrings[name].ToString();
+            return ConfigurationManager.ConnectionStrings[name].ToString();
         }
     }
 }

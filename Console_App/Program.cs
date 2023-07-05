@@ -16,35 +16,34 @@ namespace Console_App
         {
 
             /* Pseudocode
-                 ** PART 1 **
-1. Check the number of arguments passed to the application. If the number of arguments
-is not equal to 2 or if any argument is null, display an error message and exit the program.
-2. Call the addArgs method and pass arguments to it.
-3. Display the result obtained from the addArgs method.
-4.Implement unit tests for the extensionMethods class by writing unit tests 
-to verify the functionality of the addArgs method with different argument types.
-                * End of PART 1
-                 ----------------
-                 ** PART 2 **
-1. Create a new SQL database to store the arguments.
-2. Create a data layer and repository for storing and retrieving data from the database.
-3. Define a table in the database to store the arguments with an appropriate schema.
-4. Implement the repository class (`SQLRepository`) that implements the `IArgRepository` interface.
-5. In the `SQLRepository` class:
-   a. Implement the `AddArg` method to insert the argument into the database table.
-   b. Implement the `GetArgs` method to retrieve all arguments from the database table.
-6. In the `Program` class:
-   a. Create an instance of the repository (`SQLRepository`) and use it to interact with the database.
-   b. Call the `AdArg` method of the repository to store the argument in the database.
-   c. Call the `getArgs` method of the repository to retrieve all arguments from the database.
-   d. Display the retrieved arguments.
-7. Implement basic error handling for database connectivity and operations.
-8. Implement basic security measures by using parameterized queries to prevent SQL injection attacks.
-9. Document the chosen techniques and explain any limitations or considerations made during the implementation.
-                * End of PART 2
-                 ----------------
-              */
-
+                       ** PART 1 **
+      1. Check the number of arguments passed to the application. If the number of arguments
+      is not equal to 2 or if any argument is null, display an error message and exit the program.
+      2. Call the addArgs method and pass arguments to it.
+      3. Display the result obtained from the addArgs method.
+      4.Implement unit tests for the extensionMethods class by writing unit tests 
+      to verify the functionality of the addArgs method with different argument types.
+                      * End of PART 1
+                       ----------------
+                       ** PART 2 **
+      1. Create a new SQL database to store the arguments.
+      2. Create a data layer and repository for storing and retrieving data from the database.
+      3. Define a table in the database to store the arguments with an appropriate schema.
+      4. Implement the repository class (`SQLRepository`) that implements the `IArgRepository` interface.
+      5. In the `SQLRepository` class:
+         a. Implement the `AddArg` method to insert the argument into the database table.
+         b. Implement the `GetArgs` method to retrieve all arguments from the database table.
+      6. In the `Program` class:
+         a. Create an instance of the repository (`SQLRepository`) and use it to interact with the database.
+         b. Call the `AdArg` method of the repository to store the argument in the database.
+         c. Call the `getArgs` method of the repository to retrieve all arguments from the database.
+         d. Display the retrieved arguments.
+      7. Implement basic error handling for database connectivity and operations.
+      8. Implement basic security measures by using parameterized queries to prevent SQL injection attacks.
+      9. Document the chosen techniques and explain any limitations or considerations made during the implementation.
+                      * End of PART 2
+                       ----------------
+                    */
 
             /** PART 1 Implementation **/
             argsErrorhandler(args);
@@ -61,9 +60,6 @@ to verify the functionality of the addArgs method with different argument types.
             Console.WriteLine("---------");
             Console.WriteLine("End of PART 1");
             Console.WriteLine("---------");
-
-
-
 
             /** PART 2 Implementation **/
 
@@ -85,7 +81,6 @@ to verify the functionality of the addArgs method with different argument types.
             displayArgs(argsList);
         }
 
-
         private static void argsErrorhandler(string[] args)
         {
             if (args.Length != 2)
@@ -101,7 +96,6 @@ to verify the functionality of the addArgs method with different argument types.
                 Environment.Exit(1); // Terminate the program with exit code 1
             }
         }
-      
 
         private static void displayArgs(IEnumerable<Arg> args)
         {
@@ -110,7 +104,6 @@ to verify the functionality of the addArgs method with different argument types.
                 Console.WriteLine(arg.argValue);
             }
         }
-
 
         /*
         private static void addArgToDB(string result, IArgRepository IArg)

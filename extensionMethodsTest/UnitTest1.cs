@@ -10,7 +10,7 @@ namespace extensionMethodsTest
         dynamic expected;
         dynamic actual;
 
-     [TestMethod]
+        [TestMethod]
         public void addTwoIntegers()
         {
             // Arrange
@@ -19,12 +19,11 @@ namespace extensionMethodsTest
             expected = 3;
 
             // Act
-             actual = argument1.AddArgs(argument2);
+            actual = argument1.AddArgs(argument2);
 
             // Assert
             Assert.AreEqual(expected, actual);
         }
-
 
         [TestMethod]
         public void addIntegerWithString()
@@ -45,9 +44,9 @@ namespace extensionMethodsTest
         public void addIntegerWithDouble()
         {
             // Arrange
-             argument1 = 1;
-             argument2 = 2.2;
-             expected = 3.2;
+            argument1 = 1;
+            argument2 = 2.2;
+            expected = 3.2;
 
             // Act
             actual = argument1.AddArgs(argument2);
@@ -60,9 +59,9 @@ namespace extensionMethodsTest
         public void addTwoChars()
         {
             // Arrange
-             argument1 = "a";
-             argument2 = "b";
-             expected = "ab";
+            argument1 = "a";
+            argument2 = "b";
+            expected = "ab";
 
             // Act
             actual = argument1.AddArgs(argument2);
@@ -75,9 +74,9 @@ namespace extensionMethodsTest
         public void addTwoDoubles()
         {
             // Arrange
-             argument1 = 1.1;
-             argument2 = 2.2;
-             expected = 3.3000000;
+            argument1 = 1.1;
+            argument2 = 2.2;
+            expected = 3.3000000;
 
             // Act
             actual = argument1.AddArgs(argument2);
@@ -91,9 +90,9 @@ namespace extensionMethodsTest
         public void addDoubleWithChar()
         {
             // Arrange
-             argument1 = 1.1;
-             argument2 = "a";
-             expected = "1.1a";
+            argument1 = 1.1;
+            argument2 = "a";
+            expected = "1.1a";
 
             // Act
             actual = argument1.AddArgs(argument2);
@@ -102,13 +101,12 @@ namespace extensionMethodsTest
             Assert.AreEqual(expected, actual);
         }
 
-
         [TestMethod]
         public void addTwoFloats()
         {
             // Arrange
-             argument1 = 1.1F;
-             argument2 = 2.2F;
+            argument1 = 1.1 F;
+            argument2 = 2.2 F;
             expected = 3.3000002;
 
             // Act
