@@ -11,6 +11,7 @@ namespace Console_App.IRepository
     {
         void AdArg(string result);
 
+        // IEnumerable<T> was chosen here because only iterating over the elements is needed here
         IEnumerable<Arg> getArgs();
 
     }

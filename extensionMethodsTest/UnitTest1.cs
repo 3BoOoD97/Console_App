@@ -9,7 +9,6 @@ namespace extensionMethodsTest
         object argument2;
         dynamic expected;
         dynamic actual;
-       // object string1 = "abc";
 
      [TestMethod]
         public void addTwoIntegers()
