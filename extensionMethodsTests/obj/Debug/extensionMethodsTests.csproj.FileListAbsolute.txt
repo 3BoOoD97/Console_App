@@ -1,2 +1,0 @@
-C:\Users\abodn\Desktop\GitHub\Console_App\extensionMethodsTests\obj\Debug\extensionMethodsTests.csproj.AssemblyReference.cache
-C:\Users\abodn\Desktop\GitHub\Console_App\extensionMethodsTests\obj\Debug\extensionMethodsTests.csproj.CoreCompileInputs.cache
