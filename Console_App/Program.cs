@@ -49,7 +49,7 @@ to verify the functionality of the addArgs method with different argument types.
             /** PART 1 Implementation **/
             argsErrorhandler(args);
 
-            // Assign the arguments to dynamic variables
+            // Assign the arguments to var variables
             var argument1 = args[0];
             var argument2 = args[1];
             // add the arguments using the extension method and assign the result to a dynamic variable
@@ -66,7 +66,6 @@ to verify the functionality of the addArgs method with different argument types.
 
 
             /** PART 2 Implementation **/
-
 
             Console.WriteLine("This is the second part of the program, it will add the arguments to the database and display all the data");
 

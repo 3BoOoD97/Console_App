@@ -29,26 +29,49 @@ namespace Console_App.Repository
         */
         public void AdArg(string arg)
         {
+            // Check if the argument is null or empty
             if (arg == null)
             {
                 throw new ArgumentNullException(nameof(arg));
             }
-
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.GetConnectionString("ArgsDB")))
+            if (arg == "")
             {
+                throw new ArgumentException("Argument cannot be empty", nameof(arg));
+            }
+            try
+            {
+                using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.GetConnectionString("ArgsDB")))
+            {
+                // Insert the argument into the database table using Stored Procedure to prevent SQL injection attacks
                 var parameters = new { argValue = arg };
                 connection.Execute("InsertArg", parameters, commandType: CommandType.StoredProcedure);
 
+            }
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred while adding an argument: " + ex.Message);
+                throw;
             }
         }
 
       
         public IEnumerable<Arg> getArgs()
         {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.GetConnectionString("ArgsDB")))
+            try
             {
-                var output = connection.Query<Arg>("SELECT * FROM argTable").ToList();
-                return output;
+                using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.GetConnectionString("ArgsDB")))
+                {
+                    // Retrieve all arguments from the database table. No need for Stored Procedure since it does not include any user input in the SQL query
+                    var output = connection.Query<Arg>("SELECT * FROM argTable").ToList();
+                    return output;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred while getting arguments: "+ex.Message);
+                throw;
             }
         }
 
