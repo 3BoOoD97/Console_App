@@ -2,7 +2,7 @@
   "profiles": {
     "Console_App": {
       "commandName": "Project",
-      "commandLineArgs": "al i"
+      "commandLineArgs": "dy na"
     }
   }
 }

@@ -9,6 +9,7 @@ namespace Console_App
 {
     public static class Helper
     {
+        // Get Connection String from App.Config
         public static string GetConnectionString(string name)
         {
          return ConfigurationManager.ConnectionStrings[name].ToString();

@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Console_App
 {
-    public class extensionMethods
+    public static class ExtensionMethods
     {
         // addArgs method to add two arguments 
-        public static dynamic addArgs(dynamic arg1, dynamic arg2)
+        public static dynamic addArgs(this dynamic arg1, dynamic arg2)
         {
            /* Using dynamic variables instead of generic ones so we can Perform 
             * mathematical operations during run time without knowing the type of the variables.*/
