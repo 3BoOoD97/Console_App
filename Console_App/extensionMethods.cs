@@ -10,11 +10,13 @@ namespace Console_App
     public static class ExtensionMethods
     {
         // addArgs method to add two arguments 
-        public static dynamic addArgs(this dynamic arg1, dynamic arg2)
+        public static dynamic AddArgs<T>(this T arg1, T arg2)
         {
-           /* Using dynamic variables instead of generic ones so we can Perform 
-            * mathematical operations during run time without knowing the type of the variables.*/
-            dynamic result = arg1 + arg2;
+            /* Using dynamic variables instead of generic ones so we can Perform 
+             * mathematical operations during run time without knowing the type of the variables.*/
+            dynamic a = arg1;
+            dynamic b = arg2;
+            dynamic result = a + b;
             return result;
         }
 
