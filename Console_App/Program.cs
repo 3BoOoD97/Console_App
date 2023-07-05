@@ -47,14 +47,13 @@ to verify the functionality of the addArgs method with different argument types.
 
 
             /** PART 1 Implementation **/
-
             argsErrorhandler(args);
 
             // Assign the arguments to dynamic variables
-            dynamic argument1 = args[0];
-            dynamic argument2 = args[1];
+            var argument1 = args[0];
+            var argument2 = args[1];
             // add the arguments using the extension method and assign the result to a dynamic variable
-            dynamic result = argument1.addArgs(argument2);
+            dynamic result = argument1.AddArgs(argument2);
             // display the result
             Console.WriteLine("The sum of adding the arguments is: " + result);
 

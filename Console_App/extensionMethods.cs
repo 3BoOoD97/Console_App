@@ -9,6 +9,8 @@ namespace Console_App
 {
     public static class ExtensionMethods
     {
+
+
         // addArgs method to add two arguments 
         public static dynamic AddArgs<T>(this T arg1, T arg2)
         {
@@ -20,6 +22,7 @@ namespace Console_App
             return result;
         }
 
-     
+       
+
     }
 }

@@ -5,12 +5,13 @@ namespace extensionMethodsTest
     [TestClass]
     public class UnitTest1
     {
-        dynamic argument1;
-        dynamic argument2;
+        object argument1;
+        object argument2;
         dynamic expected;
         dynamic actual;
+       // object string1 = "abc";
 
-      [TestMethod]
+     [TestMethod]
         public void addTwoIntegers()
         {
             // Arrange
@@ -19,7 +20,7 @@ namespace extensionMethodsTest
             expected = 3;
 
             // Act
-             actual = extensionMethods.addArgs(argument1, argument2);
+             actual = argument1.AddArgs(argument2);
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -35,7 +36,7 @@ namespace extensionMethodsTest
             expected = "1abc";
 
             // Act
-             actual = extensionMethods.addArgs(argument1, argument2);
+            actual = argument1.AddArgs(argument2);
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -50,7 +51,7 @@ namespace extensionMethodsTest
              expected = 3.2;
 
             // Act
-            actual = extensionMethods.addArgs(argument1, argument2);
+            actual = argument1.AddArgs(argument2);
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -65,7 +66,7 @@ namespace extensionMethodsTest
              expected = "ab";
 
             // Act
-            var actual = extensionMethods.addArgs(argument1, argument2);
+            actual = argument1.AddArgs(argument2);
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -80,8 +81,8 @@ namespace extensionMethodsTest
              expected = 3.3000000;
 
             // Act
-             actual = extensionMethods.addArgs(argument1, argument2);
-             actual = Math.Round(actual, 7);
+            actual = argument1.AddArgs(argument2);
+            actual = Math.Round(actual, 7);
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -96,7 +97,7 @@ namespace extensionMethodsTest
              expected = "1.1a";
 
             // Act
-             actual = extensionMethods.addArgs(argument1, argument2);
+            actual = argument1.AddArgs(argument2);
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -112,8 +113,8 @@ namespace extensionMethodsTest
             expected = 3.3000002;
 
             // Act
-             actual = extensionMethods.addArgs(argument1, argument2);
-             actual = Math.Round(actual, 7);
+            actual = argument1.AddArgs(argument2);
+            actual = Math.Round(actual, 7);
             // Assert
             Assert.AreEqual(expected, actual);
         }
